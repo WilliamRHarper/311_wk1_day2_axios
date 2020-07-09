@@ -27,10 +27,11 @@ const getMovieByIdFailure = () => {
   .get(url).then((result) => result.data)
   .catch(function (error) {
     // handle error
-    if (error == 'Error: Request failed with status code 404'){
-      return 404;
-    }
-    // return error;
+    // if (error == 'Error: Request failed with status code 404'){
+      // return 404;
+    // }
+    console.log(error);
+    return error.response.status;
   })
 }
 
